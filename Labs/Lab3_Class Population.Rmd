@@ -1,0 +1,91 @@
+---
+title: "Lab 3"
+author: "Greycin Kim"
+date: "2024-09-05"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Quantitative Data Variables
+The two variables I collected in class are:
+
+1. Units Enrolled This Semester
+2. Number of TV Shows Currently Watching
+
+# Units Enrolled This Semester
+```{r unitsTakenVector, echo = TRUE}
+unitsTakenVector = c(15, 11, 13, 14, 14, 13, 16, 14, 16, 15)
+
+meanUnitsTaken = mean(unitsTakenVector)
+modeUnitsTaken = 14
+medianUnitsTaken = median(unitsTakenVector)
+rangeUnitsTaken = diff(range(unitsTakenVector))
+SDUnitsTaken = sd(unitsTakenVector)
+
+Q1 <- quantile(unitsTakenVector, 0.25)
+Q3 <- quantile(unitsTakenVector, 0.75)
+IQR <- Q3 - Q1
+
+lower_bound <- Q1 - 1.5 * IQR
+upper_bound <- Q3 + 1.5 * IQR
+```
+The mean is: `r meanUnitsTaken`
+
+The mode is: `r modeUnitsTaken`
+
+The median is: `r medianUnitsTaken`
+
+The range is: `r rangeUnitsTaken`
+
+The Standard Deviation is: `r SDUnitsTaken`
+
+Q1 is `r Q1` and Q2 is `r Q3` and the IQR is `r IQR`
+
+lowerbound is `r lower_bound` and the upperbound is `r upper_bound`. Therefore the outliers are 11
+
+
+
+# Number of TV Shows Currently Watching
+```{r numOfTVShows, echo=TRUE}
+numOfTVShowsCurrentlyWatching = c(1, 2, 2, 0, 3, 1, 1, 9, 1, 2)
+
+meanNumOfTVShows = mean(numOfTVShowsCurrentlyWatching)
+modeNumOfTVShows = 1
+medianNumOfTVShows = median(numOfTVShowsCurrentlyWatching)
+rangeNumOfTVShows = diff(range(numOfTVShowsCurrentlyWatching))
+SDNumOfTVShows = sd(numOfTVShowsCurrentlyWatching)
+
+Q1 <- quantile(numOfTVShowsCurrentlyWatching, 0.25)
+Q3 <- quantile(numOfTVShowsCurrentlyWatching, 0.75)
+IQR <- Q3 - Q1
+
+lower_bound <- Q1 - 1.5 * IQR
+upper_bound <- Q3 + 1.5 * IQR
+```
+
+The mean is: `r meanNumOfTVShows`
+
+The mode is: `r modeNumOfTVShows`
+
+The median is: `r medianNumOfTVShows`
+
+The range is: `r rangeNumOfTVShows`
+
+The Standard Deviation is: `r SDNumOfTVShows`
+
+Q1 is `r Q1` and Q2 is `r Q3` and the IQR is `r IQR`
+
+lowerbound is `r lower_bound` and the upperbound is `r upper_bound`. Therefore the outliers is 9
+
+
+# Histogram of Number of Tv Shows class is currently watching
+```{r hist, echo=TRUE}
+numOfTVShowsCurrentlyWatching = c(1, 2, 2, 0, 3, 1, 1, 9, 1, 2)
+
+hist(numOfTVShowsCurrentlyWatching)
+```
+
+The shape is right skewed because the majority of the values are concentrated on the left side of the histogram and there is a long tail extending to the right
